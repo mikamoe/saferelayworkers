@@ -1,0 +1,19 @@
+{
+  // SafeRelay — Cloudflare Workers configuration
+  // Used by the "Deploy to Cloudflare" button, Workers Git integration and Wrangler.
+  // The KV namespace is declared WITHOUT an id on purpose: Cloudflare
+  // automatically creates it on first deploy (automatic provisioning),
+  // so you never have to create or bind KV manually.
+  "$schema": "https://json.schemastore.org/wrangler.json",
+  "name": "saferelayworkers",
+  "main": "worker.js",
+  "compatibility_date": "2025-01-01",
+  "workers_dev": true,
+  // Keep variables/secrets set in the dashboard when Git deploys update the code.
+  "keep_vars": true,
+  "kv_namespaces": [
+    {
+      "binding": "KV","id": "5b3f3e74e2eb48da8bc4d66db0564c1e"
+    }
+  ]
+}
